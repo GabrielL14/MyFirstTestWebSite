@@ -380,6 +380,7 @@ function ToNAddress(abcAddress, combinaison){
             }
             console.log(entry);
         }
+        console.log(url, location.href);
         alert("identity: ", identity, ", type: ", type);
     }
 
