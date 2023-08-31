@@ -1,10 +1,14 @@
 (function(){
+    function ToStrAddress(str){
+        return 
+    }
     function GetUrl(){
         
     }
-    function IncludeScript(url){
+    function IncludeScript(src){
         let script = document.createElement("script");
-        
+        script.src = src;
+        document.head.appendChild(script);
     }
     function SetPage(dom){
         document.open();
