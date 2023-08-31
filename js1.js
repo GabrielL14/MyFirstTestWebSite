@@ -51,6 +51,7 @@ var combinaison1 = {
     
 };
 
+console.log("papipapoin");
 
 combinaison1.c1 = GenerateComb();
 combinaison1.c2 = GenerateComb();
