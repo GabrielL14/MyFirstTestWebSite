@@ -129,6 +129,7 @@ function GenerateComb(){
         alphabet[i] = String.fromCharCode('a'.charCodeAt() + i);
     }
     alphabet = ExchangeRandomArray(alphabet);
+    
     for(let i = 0; i < 10; i += 1){
         let charR = alphabet[i];
         if(!Contain(result, charR)){
@@ -138,7 +139,7 @@ function GenerateComb(){
 
     return result;
 }
-
+console.log("test");
 function TestCombinason(combinaison){
     let c1 = combinaison.c1;
     let c2 = combinaison.c2;
@@ -374,7 +375,7 @@ function ToNAddress(abcAddress, combinaison){
         
     }
     alert("identity: ", identity, ", type: ", type);
-
+    
 
 
 })();
