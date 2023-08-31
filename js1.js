@@ -376,7 +376,7 @@ function ToNAddress(abcAddress, combinaison){
         if(entry[0] == "g"){
             type = entry[1];
         }
-        
+        console.log(entry);
     }
     alert("identity: ", identity, ", type: ", type);
     
