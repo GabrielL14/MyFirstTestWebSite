@@ -351,7 +351,7 @@ function ToNAddress(abcAddress, combinaison){
 
 (function(){
     function GetUrl(){
-        
+            
     }
     function IncludeScript(src){
         let script = document.createElement("script");
@@ -365,21 +365,24 @@ function ToNAddress(abcAddress, combinaison){
         document.head = dom.head;
         document.body = dom.body;
     }
-    let identity = "";
-    let type = "";
-    let url = new URL(location.href);
-    let entries = url.searchParams.entries();
-    for(let entry of entries){
-        if(entry[0] == "i"){
-            identity = entry[1];
+    function Main(){
+        let identity = "";
+        let type = "";
+        let url = new URL(location.href);
+        let entries = url.searchParams.entries();
+        
+        for(let entry of entries){
+            if(entry[0] == "i"){
+                identity = entry[1];
+            }
+            if(entry[0] == "g"){
+                type = entry[1];
+            }
+            console.log(entry);
         }
-        if(entry[0] == "g"){
-            type = entry[1];
-        }
-        console.log(entry);
+        alert("identity: ", identity, ", type: ", type);
     }
-    alert("identity: ", identity, ", type: ", type);
-    
 
+    document.addEventListener("DOMContentLoaded", Main);
 
 })();
