@@ -378,7 +378,7 @@ function ToNAddress(abcAddress, combinaison){
         }
         
     }
-    //alert("identity: ", identity, ", type: ", type);
+    alert("identity: ", identity, ", type: ", type);
     
 
 
