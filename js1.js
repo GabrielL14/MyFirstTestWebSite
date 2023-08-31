@@ -139,7 +139,7 @@ function GenerateComb(){
 
     return result;
 }
-console.log("test");
+console.log("test1");
 function TestCombinason(combinaison){
     let c1 = combinaison.c1;
     let c2 = combinaison.c2;
