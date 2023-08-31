@@ -51,6 +51,8 @@ var combinaison1 = {
     
 };
 
+
+console.log("test1");
 console.log("papipapoin");
 
 combinaison1.c1 = GenerateComb();
