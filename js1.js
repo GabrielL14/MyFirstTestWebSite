@@ -54,6 +54,7 @@ var combinaison1 = {
 
 console.log("test1");
 console.log("papipapoin");
+console.log("papipapoin2");
 
 combinaison1.c1 = GenerateComb();
 combinaison1.c2 = GenerateComb();
@@ -377,7 +378,7 @@ function ToNAddress(abcAddress, combinaison){
         }
         
     }
-    alert("identity: ", identity, ", type: ", type);
+    //alert("identity: ", identity, ", type: ", type);
     
 
 
