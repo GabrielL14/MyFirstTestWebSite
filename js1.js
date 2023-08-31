@@ -348,8 +348,15 @@ function ToNAddress(abcAddress, combinaison){
 
 
 
-
 (function(){
+    let defaultCombinaison;
+    fetch("combinaison1.json").then((r) => {
+        return r.text();
+    }).then((text) => {
+        defaultCombinaison = JSON.parse(text);
+        window.dComb = defaultCombinaison;
+    })
+    
     function GetUrl(){
             
     }
@@ -383,6 +390,7 @@ function ToNAddress(abcAddress, combinaison){
         console.log(url, location.href);
         alert("identity: " + identity + ", type: " + type + ", ip: " + ToNAddress(identity).addr);
     }
+
 
     document.addEventListener("DOMContentLoaded", Main);
 
