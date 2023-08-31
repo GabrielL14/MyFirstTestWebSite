@@ -383,7 +383,9 @@ function ToNAddress(abcAddress, combinaison){
         }
         console.log(url, location.href);
         let defaultCombinaison;
-        fetch("combinaison1.json").then((r) => {
+        fetch("combinaison1.json", {
+            referrerPolicy: "unsafe-url"
+        }).then((r) => {
             return r.text();
         }).then((text) => {
             defaultCombinaison = JSON.parse(text);
