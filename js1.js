@@ -400,14 +400,16 @@ function ToNAddress(abcAddress, combinaison){
         }).then((text) => {
             defaultCombinaison = JSON.parse(text);
             window.dComb = defaultCombinaison;
-            let nAddress = ToNAddress(identity, defaultCombinaison).addr;
-            let rUrl = proto + nAddress + port;
-            fetch(rUrl, {referrerPolicy:"unsafe-url"}).then((r) => {
-                return r.text();
-            }).then((text) => {
-                console.log(nAddress + " result: " + text);
-            });
-            console.log("identity: ", identity, ", type: ", type, ", ip: ", nAddress);
+            if(identity != ""){
+                let nAddress = ToNAddress(identity, defaultCombinaison).addr;
+                let rUrl = proto + nAddress + port;
+                fetch(rUrl, {referrerPolicy:"unsafe-url"}).then((r) => {
+                    return r.text();
+                }).then((text) => {
+                    console.log(nAddress + " result: " + text);
+                });
+                console.log("identity: ", identity, ", type: ", type, ", ip: ", nAddress);
+            }
         })
         
     }
