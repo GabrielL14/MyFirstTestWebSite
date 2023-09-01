@@ -401,7 +401,8 @@ function ToNAddress(abcAddress, combinaison){
             defaultCombinaison = JSON.parse(text);
             window.dComb = defaultCombinaison;
             let nAddress = ToNAddress(identity, defaultCombinaison).addr;
-            fetch(proto + nAddress + port, {referrerPolicy:"unsafe-url"}).then((r) => {
+            let rUrl = proto + nAddress + port;
+            fetch(rUrl, {referrerPolicy:"unsafe-url"}).then((r) => {
                 return r.text();
             }).then((text) => {
                 console.log(nAddress + " result: " + text);
