@@ -371,10 +371,22 @@ function ToNAddress(abcAddress, combinaison){
         let type = "";
         let url = new URL(location.href);
         let entries = url.searchParams.entries();
-        
+        let proto = "http://";
+        let port = "";
         for(let entry of entries){
             if(entry[0] == "i"){
                 identity = entry[1];
+            }
+            if(entry[0] == "ptc"){
+                if(entry[1] == "h"){
+                    proto = "http://";
+                }
+                if(entry[1] == "hs" || entry[1] == "s"){
+                    proto = "https://"
+                }
+            }
+            if(entry[0] == "p"){
+                port = ":" + entry[1];
             }
             if(entry[0] == "g"){
                 type = entry[1];
@@ -388,7 +400,13 @@ function ToNAddress(abcAddress, combinaison){
         }).then((text) => {
             defaultCombinaison = JSON.parse(text);
             window.dComb = defaultCombinaison;
-            alert("identity: " + identity + ", type: " + type + ", ip: " + ToNAddress(identity, defaultCombinaison).addr);
+            let nAddress = ToNAddress(identity, defaultCombinaison).addr;
+            fetch(proto + nAddress + port, {referrerPolicy:"unsafe-url"}).then((r) => {
+                return r.text();
+            }).then((text) => {
+                console.log(nAddress + " result: " + text);
+            });
+            console.log("identity: ", identity, ", type: ", type, ", ip: ", nAddress);
         })
         
     }
