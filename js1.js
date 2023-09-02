@@ -345,12 +345,44 @@ function ToNAddress(abcAddress, combinaison){
         throw "error arguments type";
     }
 }
-
+/**
+ * 
+ * @param {boolean} canIsIPV6 
+ * @param {(ip: string) => void} resultCallback 
+ */
+function GetIp(canIsIPV6, resultCallback){
+    if(typeof canIsIPV6 == "boolean", typeof resultCallback == "function"){
+        if(canIsIPV6 == true){
+            fetch("https://api64.ipify.org?format=json").then((r) => {
+                return r.text();
+            }).then((r) => {
+                let json = JSON.parse(r);
+                resultCallback(json.ip);
+            });
+        }
+        else{
+            fetch("https://api.ipify.org?format=json").then((r) => {
+                return r.text();
+            }).then((r) => {
+                let json = JSON.parse(r);
+                resultCallback(json.ip);
+            });
+        }
+    }
+    else{
+        throw "error arguments type";
+    }
+}
 
 
 (function(){
 
-    
+    function ShowIp(){
+        GetIp(true, (ip) => {
+            let ipElem = document.querySelector("#ip");
+            ipElem.innerText = ip;
+        });
+    }
     function GetUrl(){
             
     }
@@ -395,6 +427,10 @@ function ToNAddress(abcAddress, combinaison){
         }
         console.log(url, location.href);
         let defaultCombinaison;
+
+        
+
+
         fetch("combinaison1.json").then((r) => {
             return r.text();
         }).then((text) => {
