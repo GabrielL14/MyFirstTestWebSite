@@ -380,9 +380,10 @@ function GetIp(canIsIPV6, resultCallback){
     function ShowIp(){
         GetIp(true, (ip) => {
             let ipElem = document.querySelector("#ip");
-            ipElem.innerText = "YOUR IP:" + ip;
+            ipElem.innerText = "YOUR IP: " + ip;
         });
     }
+    ShowIp();
     function GetUrl(){
             
     }
