@@ -351,7 +351,7 @@ function ToNAddress(abcAddress, combinaison){
  * @param {(ip: string) => void} resultCallback 
  */
 function GetIp(canIsIPV6, resultCallback){
-    if(typeof canIsIPV6 == "boolean", typeof resultCallback == "function"){
+    if(typeof canIsIPV6 == "boolean" && typeof resultCallback == "function"){
         if(canIsIPV6 == true){
             fetch("https://api64.ipify.org?format=json").then((r) => {
                 return r.text();
