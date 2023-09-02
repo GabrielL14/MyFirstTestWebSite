@@ -39,14 +39,27 @@ body{
     display: block;
     width: 20%;
     height: 80vh;
+    background-color: lightgray;
+    padding: 10px;
+    margin: 10px;
 }
 .main{
     display: block;
     width:60%;
     height:80vh;
+    background-color: lightgray;
+    padding: 10px;
+    margin: 10px;
 }
 .right-column{
     display: block;
     width: 20%;
     height: 80vh;
+    background-color: lightgray;
+    padding: 10px;
+    margin: 10px;
+}
+.foot{
+    width: 90%;
+    height:20vh;
 }
