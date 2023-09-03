@@ -11,14 +11,17 @@ const server = http.createServer((req, res) => {
     let fileNameR = GetFileNameByPath(url);
     let fileName = fileNameR.fileName;
     let contentType = fileNameR.contentType;
+    console.log("fileName: ", fileName, ", contentType: ", contentType);
     fs.stat(fileName, (err, stats) => {
         if(err == null){
             if(stats.isFile()){
                 fs.readFile(fileName, (err, data) => {
                     if(err == null){
+                        res.setHeader("Content-Type", contentType);
                         res.write(data);
                     }
                     else{
+                        res.setHeader("Content-Type", "text/html");
                         res.write("<h1>ERROR TO READ FILE</h1>");
                         console.log("ERROR TO READ FILE");
                     }
@@ -26,12 +29,14 @@ const server = http.createServer((req, res) => {
                 })
             }
             else{
+                res.setHeader("Content-Type", "text/html");
                 res.write("<h1>ERROR ELEMENT IN NOT FILE</h1>");
                 console.log("ERROR ELEMENT IS NOT FILE");
                 res.end();
             }
         }
         else{
+            res.setHeader("Content-Type", "text/html");
             console.log("ERROR FILE NOT FOUND");
             res.write("<h1>ERROR FILE NOT FOUND</h1>");
             res.end();
