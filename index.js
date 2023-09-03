@@ -72,16 +72,15 @@ function GetFileNameByPath(pathStr){
     if(baseName == "" || baseName == "index.html"){
         fileName = "index.html";
     }
-    if(dirName == "js"){
+    if(dirName == "/js"){
         fileName = baseName;
     }
-    if(dirName == "css"){
+    if(dirName == "/css"){
         fileName = baseName;
     }
-    if(dirName == "json"){
+    if(dirName == "/json"){
         fileName = baseName;
     }
-    console.log("dirName: ", dirName);
 
     return {
         fileName: fileName,
