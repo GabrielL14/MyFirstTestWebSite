@@ -41,9 +41,10 @@ const server = http.createServer((req, res) => {
 
 
 function GetFileNameByPath(pathStr){
-    let fileName = path.basename(pathStr);
-    let contentType = "text/plain";
+    let fileName = "";
+    let contentType = "text/html";
     let ext = path.extname(pathStr);
+    let baseName = path.basename(pathStr);
     if(ext == "" || ext == ".html"){
         contentType = "text/html";
     }
@@ -58,6 +59,11 @@ function GetFileNameByPath(pathStr){
     }
     if(ext == ".json"){
         contentType == "application/json";
+    }
+
+
+    if(pathStr == "/"){
+        fileName == "index.html";
     }
 
     return {
