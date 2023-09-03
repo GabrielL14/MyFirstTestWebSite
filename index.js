@@ -67,8 +67,14 @@ function GetFileNameByPath(pathStr){
     }
 
 
-    if(pathStr == "/"){
+    if(baseName == "" || baseName == "index.html"){
         fileName = "index.html";
+    }
+    if(baseName == "style.css"){
+        fileName = "style.css";
+    }
+    if(baseName == "js1.js"){
+        fileName == "js1.js";
     }
 
     return {
