@@ -81,6 +81,7 @@ function GetFileNameByPath(pathStr){
     if(dirName == "json"){
         fileName = baseName;
     }
+    console.log("dirName: ", dirName);
 
     return {
         fileName: fileName,
