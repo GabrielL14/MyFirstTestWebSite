@@ -68,7 +68,7 @@ function GetFileNameByPath(pathStr){
 
 
     if(pathStr == "/"){
-        fileName == "index.html";
+        fileName = "index.html";
     }
 
     return {
