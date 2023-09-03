@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+console.clear();
 console.log("hello world i am a node js app in cyclic.");
 
 
