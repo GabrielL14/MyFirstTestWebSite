@@ -74,13 +74,13 @@ function GetFileNameByPath(pathStr){
         fileName = "index.html";
     }
     if(dirName == "/js"){
-        fileName = dirName + baseName;
+        fileName = dirName + "/" + baseName;
     }
     if(dirName == "/css"){
-        fileName = dirName + baseName;
+        fileName = dirName + "/" + baseName;
     }
     if(dirName == "/json"){
-        fileName = dirName + baseName;
+        fileName = dirName + "/" + baseName;
     }
 
     return {
