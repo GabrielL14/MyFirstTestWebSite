@@ -4,9 +4,9 @@ const path = require('path');
 
 console.log("hello world i am a node js app in cyclic.");
 
-fs.writeFile("log.txt", "papipapoin", (err) => {
+fs.appendFile("log.txt", "papipapoin", (err) => {
     if(err == null){
-
+        console.log("file appened");
     }
     else{
 
