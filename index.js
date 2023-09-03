@@ -55,16 +55,16 @@ function GetFileNameByPath(pathStr){
         contentType = "text/html";
     }
     if(ext == ".js"){
-        contentType == "text/javascript";
+        contentType = "text/javascript";
     }
     if(ext == ".css"){
-        contentType == "text/css";
+        contentType = "text/css";
     }
     if(ext == ".txt"){
-        contentType == "text/plain";
+        contentType = "text/plain";
     }
     if(ext == ".json"){
-        contentType == "application/json";
+        contentType = "application/json";
     }
 
 
