@@ -9,7 +9,7 @@ fs.appendFile("log.txt", "papipapoin", (err) => {
         console.log("file appened");
     }
     else{
-
+        console.log("error to append file");
     }
 });
 
