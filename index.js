@@ -51,6 +51,7 @@ function GetFileNameByPath(pathStr){
     let contentType = "text/html";
     let ext = path.extname(pathStr);
     let baseName = path.basename(pathStr);
+    let dirName = path.dirname(pathStr);
     if(ext == "" || ext == ".html"){
         contentType = "text/html";
     }
@@ -71,11 +72,14 @@ function GetFileNameByPath(pathStr){
     if(baseName == "" || baseName == "index.html"){
         fileName = "index.html";
     }
-    if(baseName == "style.css"){
-        fileName = "style.css";
+    if(dirName == "js"){
+        fileName = baseName;
     }
-    if(baseName == "js1.js"){
-        fileName = "js1.js";
+    if(dirName == "css"){
+        fileName = baseName;
+    }
+    if(dirName == "json"){
+        fileName = baseName;
     }
 
     return {
