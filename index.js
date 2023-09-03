@@ -1,9 +1,17 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-console.clear();
+
 console.log("hello world i am a node js app in cyclic.");
 
+fs.writeFile("log.txt", "papipapoin", (err) => {
+    if(err == null){
+
+    }
+    else{
+
+    }
+});
 
 const server = http.createServer((req, res) => {
     let url = req.url;
@@ -12,8 +20,6 @@ const server = http.createServer((req, res) => {
     let fileNameR = GetFileNameByPath(url);
     let fileName = fileNameR.fileName;
     let contentType = fileNameR.contentType;
-    console.log("url: ", url);
-    console.log("fileName: ", fileName, ", contentType: ", contentType);
     fs.stat(fileName, (err, stats) => {
         if(err == null){
             if(stats.isFile()){
@@ -25,7 +31,7 @@ const server = http.createServer((req, res) => {
                     else{
                         res.setHeader("Content-Type", "text/html");
                         res.write("<h1>ERROR TO READ FILE</h1>");
-                        console.log("ERROR TO READ FILE");
+                        //console.log("ERROR TO READ FILE");
                     }
                     res.end();
                 })
@@ -33,13 +39,13 @@ const server = http.createServer((req, res) => {
             else{
                 res.setHeader("Content-Type", "text/html");
                 res.write("<h1>ERROR ELEMENT IN NOT FILE</h1>");
-                console.log("ERROR ELEMENT IS NOT FILE");
+                //console.log("ERROR ELEMENT IS NOT FILE");
                 res.end();
             }
         }
         else{
             res.setHeader("Content-Type", "text/html");
-            console.log("ERROR FILE NOT FOUND");
+            //console.log("ERROR FILE NOT FOUND");
             res.write("<h1>ERROR FILE NOT FOUND</h1>");
             res.end();
         }
