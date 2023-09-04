@@ -12,43 +12,50 @@ const server = http.createServer((req, res) => {
     let url = req.url;
     let ip = req.socket.remoteAddress;
     console.log("ip: ", ip);
-    let fileNameR = GetFileNameByPath(url);
-    let fileName = fileNameR.fileName;
-    let contentType = fileNameR.contentType;
+    if(req.method == "GET"){
+        let fileNameR = GetFileNameByPath(url);
+        let fileName = fileNameR.fileName;
+        let contentType = fileNameR.contentType;
 
-    const headers = req.rawHeaders;
-    
-
-    fs.stat(fileName, (err, stats) => {
-        if(err == null){
-            if(stats.isFile()){
-                fs.readFile(fileName, (err, data) => {
-                    if(err == null){
-                        res.setHeader("Content-Type", contentType);
-                        res.write(data);
-                    }
-                    else{
-                        res.setHeader("Content-Type", "text/html");
-                        res.write("<h1>ERROR TO READ FILE</h1>");
-                        //console.log("ERROR TO READ FILE");
-                    }
+        const headers = req.rawHeaders;
+        
+        
+        fs.stat(fileName, (err, stats) => {
+            if(err == null){
+                if(stats.isFile()){
+                    fs.readFile(fileName, (err, data) => {
+                        if(err == null){
+                            res.setHeader("Content-Type", contentType);
+                            res.write(data);
+                        }
+                        else{
+                            res.setHeader("Content-Type", "text/html");
+                            res.write("<h1>ERROR TO READ FILE</h1>");
+                            //console.log("ERROR TO READ FILE");
+                        }
+                        res.end();
+                    })
+                }
+                else{
+                    res.setHeader("Content-Type", "text/html");
+                    res.write("<h1>ERROR ELEMENT IN NOT FILE</h1>");
+                    //console.log("ERROR ELEMENT IS NOT FILE");
                     res.end();
-                })
+                }
             }
             else{
                 res.setHeader("Content-Type", "text/html");
-                res.write("<h1>ERROR ELEMENT IN NOT FILE</h1>");
-                //console.log("ERROR ELEMENT IS NOT FILE");
+                //console.log("ERROR FILE NOT FOUND");
+                res.write("<h1>ERROR FILE NOT FOUND</h1>");
                 res.end();
             }
-        }
-        else{
-            res.setHeader("Content-Type", "text/html");
-            //console.log("ERROR FILE NOT FOUND");
-            res.write("<h1>ERROR FILE NOT FOUND</h1>");
-            res.end();
-        }
-    });
+        });
+    }
+    if(req.method == "POST"){
+        req.on('data', (chunk) => {
+            console.log("post request: ", JSON.parse(chunk));
+        })
+    }
 });
 
 
