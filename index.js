@@ -1,17 +1,26 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const AWS = require('aws-sdk');
+const WSAPI = require('ws');
+
+//const AWS = require('aws-sdk');
 const script1 = require('./njs-script1');
-const s3 = new AWS.S3();
+//const s3 = new AWS.S3();
 
 console.log("hello world i am a node js app in cyclic.");
+
+
 
 
 const server = http.createServer((req, res) => {
     let url = req.url;
     let ip = req.socket.remoteAddress;
-    console.log("ip: ", ip);
+    if(url == "/"){
+        console.log("ip: ", ip);
+        console.log(req.headers);
+    }
+    console.log(req.method);
+    console.log(req.url);
     if(req.method == "GET"){
         let fileNameR = GetFileNameByPath(url);
         let fileName = fileNameR.fileName;
@@ -55,9 +64,11 @@ const server = http.createServer((req, res) => {
         req.on('data', (chunk) => {
             console.log("post request: ", JSON.parse(chunk));
         })
+        res.end();
     }
 });
-
+server.listen(8080);
+//server.listen(3000);
 
 function GetFileNameByPath(pathStr){
     let fileName = "";
@@ -100,5 +111,3 @@ function GetFileNameByPath(pathStr){
         contentType: contentType
     }
 }
-
-server.listen(3000);
