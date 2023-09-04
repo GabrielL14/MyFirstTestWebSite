@@ -2,18 +2,13 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const AWS = require('aws-sdk');
-const s3 = AWS.S3;
+const script1 = require('./njs-script1');
+const s3 = new AWS.S3();
 
 console.log("hello world i am a node js app in cyclic.");
 
-fs.appendFile("log.txt", "papipapoin", (err) => {
-    if(err == null){
-        console.log("file appened");
-    }
-    else{
-        console.log(err);
-        console.log("error to append file");
-    }
+s3.putObject({Bucket:"",conte}, (err, data) => {
+    
 });
 
 const server = http.createServer((req, res) => {
@@ -23,6 +18,12 @@ const server = http.createServer((req, res) => {
     let fileNameR = GetFileNameByPath(url);
     let fileName = fileNameR.fileName;
     let contentType = fileNameR.contentType;
+    console.log(req.headers);
+    console.group();
+    for(let header of req.rawHeaders){
+        console.log(header);
+    }
+    console.groupEnd();
     fs.stat(fileName, (err, stats) => {
         if(err == null){
             if(stats.isFile()){
