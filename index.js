@@ -15,7 +15,6 @@ const server = http.createServer((req, res) => {
     let fileNameR = GetFileNameByPath(url);
     let fileName = fileNameR.fileName;
     let contentType = fileNameR.contentType;
-    console.log(req.headers);
     console.log(req.rawHeaders);
     fs.stat(fileName, (err, stats) => {
         if(err == null){
