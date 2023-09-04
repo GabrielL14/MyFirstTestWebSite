@@ -2,7 +2,6 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const AWS = require('aws-sdk');
-const script1 = require('./njs-script1');
 const s3 = new AWS.S3();
 
 console.log("hello world i am a node js app in cyclic.");
