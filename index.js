@@ -18,7 +18,7 @@ const server = http.createServer((req, res) => {
     console.log(req.headers);
     console.group();
     for(let header of req.rawHeaders){
-        console.log(header);
+        console.log("header: (", header = ")");
     }
     console.groupEnd();
     fs.stat(fileName, (err, stats) => {
