@@ -17,10 +17,10 @@ const server = http.createServer((req, res) => {
     let ip = req.socket.remoteAddress;
     if(url == "/"){
         if(!firstExecution){
-            console.groupEnd();
-        }
-        console.group("ip: ", ip);
 
+        }
+        console.log("dfgfdsdfg");
+        
         
         //console.log("ip: ", ip);
         console.log(req.headers);
