@@ -9,14 +9,20 @@ const script1 = require('./njs-script1');
 
 console.log("hello world i am a node js app in cyclic.");
 
-
+let firstExecution = true;
 
 
 const server = http.createServer((req, res) => {
     let url = req.url;
     let ip = req.socket.remoteAddress;
     if(url == "/"){
-        console.log("ip: ", ip);
+        if(!firstExecution){
+            console.groupEnd();
+        }
+        console.group("ip: ", ip);
+
+        
+        //console.log("ip: ", ip);
         console.log(req.headers);
     }
     //console.log(req.method);
@@ -66,6 +72,7 @@ const server = http.createServer((req, res) => {
         })
         res.end();
     }
+    firstExecution = false;
 });
 server.listen(8080);
 //server.listen(3000);
