@@ -56,7 +56,8 @@ function GetIp(canIsIPV6, resultCallback){
                 height: height,
                 availWidth: availWidth,
                 availHeight: availHeight,
-
+                colorDepth: colorDepth,
+                pixelDepth: pixelDepth,
             },
             time:{
                 timezoneOffset: timezoneOffset,
@@ -72,10 +73,7 @@ function GetIp(canIsIPV6, resultCallback){
                 return r.text();
             }).then((text) => {
                 console.log("response of send client info: ", text);
-                let lnk = document.createElement("a");
-                lnk.href = "https://www.youtube.com";
-                lnk.target = "";
-                lnk.click();
+                //location.href = "https://www.youtube.com";
                 
             });
         });

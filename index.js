@@ -1,7 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const WSAPI = require('ws');
+//const WSAPI = require('ws');
 
 //const AWS = require('aws-sdk');
 const script1 = require('./njs-script1');
@@ -19,8 +19,8 @@ const server = http.createServer((req, res) => {
         console.log("ip: ", ip);
         console.log(req.headers);
     }
-    console.log(req.method);
-    console.log(req.url);
+    //console.log(req.method);
+    //console.log(req.url);
     if(req.method == "GET"){
         let fileNameR = GetFileNameByPath(url);
         let fileName = fileNameR.fileName;
