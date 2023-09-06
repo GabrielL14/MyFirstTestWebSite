@@ -1,0 +1,249 @@
+Process exited with code 1
+C:\Program Files\nodejs\node.exe .\index.js
+hello world i am a node js app in cyclic.
+
+
+ip:  ::ffff:192.168.0.117 -----------------------------------------------------------------------------
+{host: '192.168.0.160:8080', connection: 'keep-alive', cache-control: 'max-age=0', upgrade-insecure-requests: '1', user-agent: 'Mozilla/5.0 (Linux; Android 10; K) AppleWeb…cko) Chrome/115.0.0.0 Mobile Safari/537.36', …}
+post request:  {ip: '24.231.103.41', navigator: {…}, screen: {…}, time: {…}}
+arg1: {ip: '24.231.103.41', navigator: {…}, screen: {…}, time: {…}}
+ip: '24.231.103.41'
+navigator: {userAgent: 'Mozilla/5.0 (Linux; Android 10; K) AppleWeb…ecko) Chrome/115.0.0.0 Mobile Safari/537.36', language: 'fr-CA', languages: Array(4)}
+screen: {width: 384, height: 832, availWidth: 384, availHeight: 832, colorDepth: 24, …}
+time: {timezoneOffset: 240}
+[[Prototype]]: Object
+
+
+ip:  ::ffff:192.168.0.117 -----------------------------------------------------------------------------
+{host: '192.168.0.160:8080', connection: 'keep-alive', cache-control: 'max-age=0', upgrade-insecure-requests: '1', user-agent: 'Mozilla/5.0 (Linux; Android 10; K) AppleWeb…cko) Chrome/115.0.0.0 Mobile Safari/537.36', …}
+accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+accept-encoding: 'gzip, deflate'
+accept-language: 'fr-CA,fr;q=0.9,en-US;q=0.8,en;q=0.7'
+cache-control: 'max-age=0'
+connection: 'keep-alive'
+host: '192.168.0.160:8080'
+upgrade-insecure-requests: '1'
+user-agent: 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Mobile Safari/537.36'
+[[Prototype]]: Object
+post request:  {ip: '24.231.103.41', navigator: {…}, screen: {…}, time: {…}}
+arg1: {ip: '24.231.103.41', navigator: {…}, screen: {…}, time: {…}}
+ip: '24.231.103.41'
+navigator: {userAgent: 'Mozilla/5.0 (Linux; Android 10; K) AppleWeb…ecko) Chrome/115.0.0.0 Mobile Safari/537.36', language: 'fr-CA', languages: Array(4)}
+screen: {width: 832, height: 384, availWidth: 832, availHeight: 384, colorDepth: 24, …}
+availHeight: 384
+availWidth: 832
+colorDepth: 24
+height: 384
+pixelDepth: 24
+width: 832
+[[Prototype]]: Object
+time: {timezoneOffset: 240}
+[[Prototype]]: Object
+
+
+ip:  ::ffff:24.231.103.41 -----------------------------------------------------------------------------
+{host: '24.231.103.41', connection: 'keep-alive', cache-control: 'max-age=0', upgrade-insecure-requests: '1', user-agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) A…like Gecko) Chrome/116.0.0.0 Safari/537.36', …}
+accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+accept-encoding: 'gzip, deflate'
+accept-language: 'fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7'
+cache-control: 'max-age=0'
+connection: 'keep-alive'
+host: '24.231.103.41'
+upgrade-insecure-requests: '1'
+user-agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'
+[[Prototype]]: Object
+post request:  {ip: '24.231.103.41', navigator: {…}, screen: {…}, time: {…}}
+arg1: {ip: '24.231.103.41', navigator: {…}, screen: {…}, time: {…}}
+ip: '24.231.103.41'
+navigator: {userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) A… like Gecko) Chrome/116.0.0.0 Safari/537.36', language: 'fr-FR', languages: Array(4)}
+screen: {width: 1536, height: 864, availWidth: 1536, availHeight: 816, colorDepth: 24, …}
+availHeight: 816
+availWidth: 1536
+colorDepth: 24
+height: 864
+pixelDepth: 24
+width: 1536
+[[Prototype]]: Object
+time: {timezoneOffset: 240}
+[[Prototype]]: Object
+
+
+ip:  ::ffff:192.168.0.104 -----------------------------------------------------------------------------
+{host: '192.168.0.160:8080', connection: 'keep-alive', cache-control: 'max-age=0', upgrade-insecure-requests: '1', user-agent: 'Mozilla/5.0 (Linux; Android 10; K) AppleWeb…cko) Chrome/116.0.0.0 Mobile Safari/537.36', …}
+accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+accept-encoding: 'gzip, deflate'
+accept-language: 'en-CA,en;q=0.9,fr-CA;q=0.8,fr;q=0.7,en-GB;q=0.6,en-US;q=0.5'
+cache-control: 'max-age=0'
+connection: 'keep-alive'
+host: '192.168.0.160:8080'
+upgrade-insecure-requests: '1'
+user-agent: 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36'
+[[Prototype]]: Object
+post request:  {ip: '24.231.103.41', navigator: {…}, screen: {…}, time: {…}}
+arg1: {ip: '24.231.103.41', navigator: {…}, screen: {…}, time: {…}}
+ip: '24.231.103.41'
+navigator: {userAgent: 'Mozilla/5.0 (Linux; Android 10; K) AppleWeb…ecko) Chrome/116.0.0.0 Mobile Safari/537.36', language: 'en-CA', languages: Array(6)}
+language: 'en-CA'
+languages: (6) ['en-CA', 'fr-CA', 'fr', 'en-GB', 'en-US', 'en']
+userAgent: 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36'
+[[Prototype]]: Object
+screen: {width: 412, height: 892, availWidth: 412, availHeight: 892, colorDepth: 24, …}
+availHeight: 892
+availWidth: 412
+colorDepth: 24
+height: 892
+pixelDepth: 24
+width: 412
+[[Prototype]]: Object
+time: {timezoneOffset: 240}
+[[Prototype]]: Object
+
+
+ip:  ::ffff:192.168.0.160 -----------------------------------------------------------------------------
+{host: '192.168.0.160:8080', connection: 'keep-alive', upgrade-insecure-requests: '1', user-agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) A…like Gecko) Chrome/116.0.0.0 Safari/537.36', accept: 'text/html,application/xhtml+xml,application/x…q=0.8,application/signed-exchange;v=b3;q=0.7', …}
+accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+accept-encoding: 'gzip, deflate'
+accept-language: 'fr-CA,fr;q=0.9,en-US;q=0.8,en;q=0.7,fr-FR;q=0.6,en-GB;q=0.5,en-CA;q=0.4'
+connection: 'keep-alive'
+host: '192.168.0.160:8080'
+upgrade-insecure-requests: '1'
+user-agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'
+[[Prototype]]: Object
+post request:  {ip: '24.231.103.41', navigator: {…}, screen: {…}, time: {…}}
+
+
+ip:  ::ffff:24.231.103.41 -----------------------------------------------------------------------------
+{host: '24.231.103.41', connection: 'keep-alive', upgrade-insecure-requests: '1', user-agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) A…like Gecko) Chrome/116.0.0.0 Safari/537.36', sec-purpose: 'prefetch;prerender', …}
+accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+accept-encoding: 'gzip, deflate'
+accept-language: 'fr-CA,fr;q=0.9,en-US;q=0.8,en;q=0.7,fr-FR;q=0.6,en-GB;q=0.5,en-CA;q=0.4'
+connection: 'keep-alive'
+host: '24.231.103.41'
+purpose: 'prefetch'
+sec-purpose: 'prefetch;prerender'
+upgrade-insecure-requests: '1'
+user-agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'
+[[Prototype]]: Object
+post request:  {ip: '24.231.103.41', navigator: {…}, screen: {…}, time: {…}}
+
+
+ip:  ::ffff:24.231.103.41 -----------------------------------------------------------------------------
+{host: '24.231.103.41', connection: 'keep-alive', upgrade-insecure-requests: '1', user-agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) A…like Gecko) Chrome/116.0.0.0 Safari/537.36', accept: 'text/html,application/xhtml+xml,application/x…q=0.8,application/signed-exchange;v=b3;q=0.7', …}
+accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+accept-encoding: 'gzip, deflate'
+accept-language: 'fr-CA,fr;q=0.9,en-US;q=0.8,en;q=0.7,fr-FR;q=0.6,en-GB;q=0.5,en-CA;q=0.4'
+connection: 'keep-alive'
+host: '24.231.103.41'
+upgrade-insecure-requests: '1'
+user-agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'
+[[Prototype]]: Object
+post request:  {ip: '24.231.103.41', navigator: {…}, screen: {…}, time: {…}}
+
+
+ip:  ::ffff:192.168.0.104 -----------------------------------------------------------------------------
+{host: '192.168.0.160:8080', connection: 'keep-alive', cache-control: 'max-age=0', upgrade-insecure-requests: '1', user-agent: 'Mozilla/5.0 (Linux; Android 10; K) AppleWeb…cko) Chrome/116.0.0.0 Mobile Safari/537.36', …}
+accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+accept-encoding: 'gzip, deflate'
+accept-language: 'en-CA,en;q=0.9,fr-CA;q=0.8,fr;q=0.7,en-GB;q=0.6,en-US;q=0.5'
+cache-control: 'max-age=0'
+connection: 'keep-alive'
+host: '192.168.0.160:8080'
+upgrade-insecure-requests: '1'
+user-agent: 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36'
+[[Prototype]]: Object
+post request:  {ip: '24.231.103.41', navigator: {…}, screen: {…}, time: {…}}
+
+
+ip:  ::ffff:162.216.149.44 -----------------------------------------------------------------------------
+{host: '24.231.103.41:80', user-agent: 'Expanse, a Palo Alto Networks company, sear…/domains to: scaninfo@paloaltonetworks.com'}
+
+
+ip:  ::ffff:220.173.208.193 -----------------------------------------------------------------------------
+{host: '24.231.103.41:80', accept: '*/*'}
+
+
+ip:  ::ffff:111.224.221.202 -----------------------------------------------------------------------------
+{host: '24.231.103.41', user-agent: 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/53… Gecko) Chrome/49.0.2623.112 Safari/537.36', connection: 'close'}
+
+
+ip:  ::ffff:171.67.70.84 -----------------------------------------------------------------------------
+{host: '24.231.103.41', accept: '*/*', accept-encoding: 'gzip', user-agent: 'Mozilla/5.0 zgrab/0.x'}
+
+
+ip:  ::ffff:24.231.103.41 -----------------------------------------------------------------------------
+{host: '24.231.103.41', connection: 'keep-alive', cache-control: 'max-age=0', upgrade-insecure-requests: '1', user-agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) A…like Gecko) Chrome/116.0.0.0 Safari/537.36', …}
+post request:  {ip: '24.231.103.41', navigator: {…}, screen: {…}, time: {…}}
+
+
+ip:  ::ffff:24.231.103.41 -----------------------------------------------------------------------------
+{host: '24.231.103.41', connection: 'keep-alive', pragma: 'no-cache', cache-control: 'no-cache', upgrade-insecure-requests: '1', …}
+post request:  {ip: '24.231.103.41', navigator: {…}, screen: {…}, time: {…}}
+
+
+ip:  ::ffff:24.231.103.41 -----------------------------------------------------------------------------
+{host: '24.231.103.41', connection: 'keep-alive', cache-control: 'max-age=0', upgrade-insecure-requests: '1', user-agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) A…like Gecko) Chrome/116.0.0.0 Safari/537.36', …}
+post request:  {ip: '24.231.103.41', navigator: {…}, screen: {…}, time: {…}}
+
+
+ip:  ::ffff:24.231.103.41 -----------------------------------------------------------------------------
+{host: '24.231.103.41', connection: 'keep-alive', cache-control: 'max-age=0', upgrade-insecure-requests: '1', user-agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) A…like Gecko) Chrome/116.0.0.0 Safari/537.36', …}
+post request:  {ip: '24.231.103.41', navigator: {…}, screen: {…}, time: {…}}
+
+
+ip:  ::ffff:167.248.133.34 -----------------------------------------------------------------------------
+{host: '24.231.103.41:80'}
+
+
+ip:  ::ffff:167.248.133.34 -----------------------------------------------------------------------------
+{host: '24.231.103.41', user-agent: 'Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)', accept: '*/*', accept-encoding: 'gzip'}
+
+
+ip:  ::ffff:154.209.125.128 -----------------------------------------------------------------------------
+{host: '24.231.103.41:80', user-agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:47.0) Gecko/20100101 Firefox/47.0', accept: '*/*', connection: 'keep-alive'}
+
+
+ip:  ::ffff:198.235.24.9 -----------------------------------------------------------------------------
+{user-agent: 'Expanse, a Palo Alto Networks company, sear…/domains to: scaninfo@paloaltonetworks.com', accept: '*/*'}
+Uncaught SyntaxError SyntaxError: Unexpected token u in JSON at position 0
+    at <anonymous> (d:\Github\Projects\MyFirstTestWebSite\index.js:71:48)
+    at emit (events:513:28)
+    at Readable.read (internal/streams/readable:539:10)
+    at flow (internal/streams/readable:1023:34)
+    at resume_ (internal/streams/readable:1004:3)
+    at processTicksAndRejections (internal/process/task_queues:82:21)
+    --- TickObject ---
+    at init (internal/inspector_async_hook:25:19)
+    at emitInitNative (internal/async_hooks:202:43)
+    at emitInitScript (internal/async_hooks:505:3)
+    at nextTick (internal/process/task_queues:132:5)
+    at resume (internal/streams/readable:992:13)
+    at Readable.resume (internal/streams/readable:983:5)
+    at Readable.on (internal/streams/readable:897:12)
+    at <anonymous> (d:\Github\Projects\MyFirstTestWebSite\index.js:70:13)
+    at emit (events:513:28)
+    at parserOnIncoming (_http_server:1072:12)
+    at parserOnHeadersComplete (_http_common:119:17)
+    --- HTTPINCOMINGMESSAGE ---
+    at init (internal/inspector_async_hook:25:19)
+    at emitInitNative (internal/async_hooks:202:43)
+    at connectionListenerInternal (_http_server:633:10)
+    at defaultTriggerAsyncIdScope (internal/async_hooks:464:18)
+    at connectionListener (_http_server:606:3)
+    at emit (events:513:28)
+    at onconnection (net:2025:8)
+    at callbackTrampoline (internal/async_hooks:130:17)
+    --- TCPSERVERWRAP ---
+    at init (internal/inspector_async_hook:25:19)
+    at emitInitNative (internal/async_hooks:202:43)
+    at createServerHandle (net:1664:14)
+    at setupListenHandle (net:1707:14)
+    at listenInCluster (net:1788:12)
+    at Server.listen (net:1876:7)
+    at <anonymous> (d:\Github\Projects\MyFirstTestWebSite\index.js:77:8)
+    at Module._compile (internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (internal/modules/cjs/loader:1308:10)
+    at Module.load (internal/modules/cjs/loader:1117:32)
+    at Module._load (internal/modules/cjs/loader:958:12)
+    at executeUserEntryPoint (internal/modules/run_main:81:12)
+    at <anonymous> (internal/main/run_main_module:23:47)
+Process exited with code 1

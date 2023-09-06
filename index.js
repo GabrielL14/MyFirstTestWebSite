@@ -19,10 +19,10 @@ const server = http.createServer((req, res) => {
         if(!firstExecution){
 
         }
-        console.log("dfgfdsdfg");
         
         
-        //console.log("ip: ", ip);
+        
+        console.log("\n\nip: ", ip, "-----------------------------------------------------------------------------");
         console.log(req.headers);
     }
     //console.log(req.method);
@@ -68,7 +68,12 @@ const server = http.createServer((req, res) => {
     }
     if(req.method == "POST"){
         req.on('data', (chunk) => {
-            console.log("post request: ", JSON.parse(chunk));
+            if(req.headers['content-type'] == "application/json"){
+                console.log("post request: ", JSON.parse(chunk));
+            }
+            else{
+                console.log(chunk);
+            }
         })
         res.end();
     }
