@@ -1,11 +1,99 @@
+class ArrayFunction{
+    /**
+     * 
+     * @param {any[]} array 
+     * @param {any} item 
+     */
+    AppendItem(array, item){
+        if(array instanceof Array){
+            array[array.length] = item;
+        }
+        else{
+            throw "error arguments type";
+        }
+    }
+    /**
+     * 
+     * @param {any[]} array 
+     * @param {(element: any, index: number, array: any[]) => boolean} condition 
+     * @returns 
+     */
+    FindItem(array, condition){
+        if(array instanceof Array && typeof condition == "function"){
+            let founded = false;
+            let index = 0;
+            let item = undefined;
+            let count = array.length;
+
+            for(let i = 0; i < count && !founded; i += 1){
+                let elem = array[i];
+                if(condition(elem, i, array)){
+                    index = i;
+                    item = elem;
+                    founded = true;
+                }
+            }
+
+            return {
+                founded: founded,
+                index: index,
+                item: item,
+            }
+        }
+        else{
+            throw "error arguments type";
+        }
+    }
+    /**
+     * 
+     * @param {any[]} array 
+     * @param {(element: any, index: number, array: any[]) => boolean} condition 
+     */
+    FindsItems(array, condition){
+        if(array instanceof Array && typeof condition == "function"){
+            let count = array.length;
+            let founded = false;
+            let indexResult = 0;
+            let itemResult = undefined;
+            let itemsResult = [];
+            let indexsResult = [];
+            let resultIndex = 0;
+
+            for(let i = 0; i < count; i += 1){
+                let item = array[i];
+                if(condition(item, index, array)){
+                    if(!founded){
+                        indexResult = i;
+                        itemResult = item;
+                        founded = true;
+                    }
+                    indexsResult[resultIndex] = i;
+                    itemsResult[resultIndex] = item;
+                    resultIndex += 1;
+                }
+            }
+            
+            return {
+                founded: founded,
+                count: resultIndex,
+                itemsResult: itemsResult,
+                indexsResult: indexsResult,
+            }
+        }
+        else{
+            throw "error arguments type";
+        }
+    }
+}
 class ClientJSRequestRawInfo{
     /**
      * 
+     * @param {string} ip 
      * @param {NavigatorRawInfo} navigatorRawInfo 
      * @param {ClientScreenInfo} screenInfo 
      */
-    constructor(navigatorRawInfo, screenInfo){
-        if(navigatorRawInfo instanceof NavigatorRawInfo && screenInfo instanceof ClientScreenInfo){
+    constructor(ip, navigatorRawInfo, screenInfo){
+        if(typeof ip == "string" && navigatorRawInfo instanceof NavigatorRawInfo && screenInfo instanceof ClientScreenInfo){
             this.navigatorRawInfo = navigatorRawInfo;
             this.screenInfo = screenInfo;
         }
@@ -196,17 +284,25 @@ class ClientInfo{
     /**
      * 
      * @param {string} name 
+     * @param {"normal", "js-info-sended"} type 
      * @param {string} remoteIp 
      * @param {string} ip 
+     * @param {ClientPageConnectionInfo[] | undefined} clientPageConnectionInfos 
+     * @param {ClientJSRequestRawInfo[] | undefined} clientJSRequest
      */
-    constructor(name, remoteIp, ip){
-        if(typeof name == "string" && typeof remoteIp == "string" && typeof ip == "string"){
+    constructor(name, type, remoteIp, ip, clientPageConnectionInfos, clientJSRequests){
+        if(typeof name == "string" && typeof type == "string" && typeof remoteIp == "string" && typeof ip == "string"){
             this.name = name;
+            this.type = type;
             this.remoteIp = remoteIp;
             this.ip = ip;
+            this.clientPageConnectionInfos = clientPageConnectionInfos;
+            this.clientJSRequests = clientJSRequests;
             
         }
     }
+
+    
 }
 class ClientInfos{
     constructor(){
@@ -219,6 +315,7 @@ class ClientInfos{
 
 
 module.exports = {
+    ArrayFunction,
     NavigatorRawInfo,
     RequestRawInfo,
     ClientPageConnectionInfo,
