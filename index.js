@@ -69,6 +69,7 @@ const server = http.createServer((req, res) => {
     if(req.method == "POST"){
         req.on('data', (chunk) => {
             if(req.headers['content-type'] == "application/json"){
+                console.log("POST");
                 console.log("post request: ", JSON.parse(chunk));
             }
             else{
