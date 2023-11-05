@@ -4,3 +4,5 @@ function Function1(){
 function Function2(){
     console.log("hello world2");
 }
+
+console.log(document.body);
