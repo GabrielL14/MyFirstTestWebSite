@@ -4,9 +4,7 @@ function Function1(){
 function Function2(){
     console.log("hello world2");
 }
-setInterval(() => {
-    const para = document.createElement("p");
-    para.innerHTML = "lkjhgfdfghjk";
-    document.body.appendChild(para);;
-}, 100);
-console.log(document.body);
+document.open();
+document.write("<h1>HELLO WORLD</h1><h2>HELLO WORLD2</2>")
+document.close();
+//console.log(document.body);
