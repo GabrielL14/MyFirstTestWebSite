@@ -15,7 +15,7 @@ function CreateWindow1(){
     return result;
 }
 
-document.body.addEventListener('click' = () => {
+document.body.addEventListener('click', () => {
     CreateWindow1();
 });
 
