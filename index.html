@@ -5,12 +5,63 @@
         <script src = "js/info.js"></script>
         <script src = "js/js1.js"></script>
         <link rel = "stylesheet" href = "css/style.css">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6650215456429055"crossorigin="anonymous"></script>
+        <!--script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6650215456429055"crossorigin="anonymous"></script-->
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <style>
+            .main > p{
+                font-size: 40px;
+                color:white;
+                background-color: aqua;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                text-align: center;
+                padding: 10px;
+                margin: 0;
+
+            }
+            .left-column > p{
+                display: flex;
+                justify-content: center;
+                align-items: baseline;
+            }
+            .bar{
+                background-color: black;
+                width: 100%;
+                position:fixed;
+                left: 0;
+                top: 0;
+                
+            }
+            #navigation-bar-parent{
+                position: fixed;
+                left: 0;
+                top: 0;
+                width:20%;
+                height:100%;
+                transition: opacity 1s;
+                background-color: black;
+                
+            }
+            .navigation-bar-parent{
+                opacity: 0.5;
+            }
+            .navigation-bar-parent-hidden{
+                opacity: 0;
+            }
+            
+            .bar-navigation{
+                display: none;
+            }
+        </style>
     </head>
     <body>
+        <div class = "bar">
+            <img id = "navigation-bar-button" src = "svg/img1.svg">
+        </div>
         <div class = "header">
-            <h1>My Github Site</h1>
+            <div class = "header-title">
+                <h1>My Github Site</h1>
+            </div>
+            
         </div>
         <div class = "nav">
             <a href = "">Link1</a>
@@ -30,6 +81,11 @@
             <a href = "">Link15</a>
             <a href = "">Link16</a>
         </div>
+        <div id = "navigation-bar-parent" class = "navigation-bar-parent-hidden">
+            <div class = "bar-navigation">
+                
+            </div>
+        </div>
         <div class = "main-parent">
             <div class = "left-column">
                 <p>Left Column</p>
@@ -46,6 +102,33 @@
         <div class = "foot">
 
         </div>
-        
+        <script>
+
+
+            function ShowNavigationBar(show){
+
+                const navigationBarParent = document.querySelector("#navigation-bar-parent");
+                
+                if(show){
+                    navigationBarParent.className = "navigation-bar-parent";
+                }
+                else{
+                    navigationBarParent.className = "navigation-bar-parent-hidden";
+                }
+            }
+            const navigationBarButton = document.querySelector('#navigation-bar-button');
+            const navigationBarParent = document.querySelector("#navigation-bar-parent");
+            navigationBarButton.addEventListener('click', (e) => {
+                console.log('click on navigation bar button');
+                ShowNavigationBar(true);
+            })
+            navigationBarParent.addEventListener('click', (e) => {
+                if(e.target == navigationBarParent){
+                    ShowNavigationBar(false);
+                }
+            })
+            
+            
+        </script>
     </body>
 </html>
