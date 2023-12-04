@@ -73,14 +73,14 @@ const server = http.createServer((req, res) => {
                 console.log("post request: ", JSON.parse(chunk));
             }
             else{
-                console.log(chunk);
+                
             }
         })
         res.end();
     }
     firstExecution = false;
 });
-server.listen(8080);
+server.listen(8080, "192.168.0.160");
 //server.listen(3000);
 
 function GetFileNameByPath(pathStr){
@@ -98,6 +98,9 @@ function GetFileNameByPath(pathStr){
     if(ext == ".css"){
         contentType = "text/css";
     }
+    if(ext == ".svg"){
+        contentType = "image/svg+xml";
+    }
     if(ext == ".txt"){
         contentType = "text/plain";
     }
@@ -114,6 +117,9 @@ function GetFileNameByPath(pathStr){
     }
     if(dirName == "/css"){
         fileName = "css/" + baseName;
+    }
+    if(dirName == "/svg"){
+        fileName = "svg/" + baseName;
     }
     if(dirName == "/json"){
         fileName = "json/" + baseName;
