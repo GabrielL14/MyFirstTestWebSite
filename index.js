@@ -80,7 +80,7 @@ const server = http.createServer((req, res) => {
     }
     firstExecution = false;
 });
-server.listen(8080, "192.168.0.160");
+server.listen(8080);
 //server.listen(3000);
 
 function GetFileNameByPath(pathStr){
