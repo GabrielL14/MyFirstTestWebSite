@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms</title>
+        <style>
+            body{
+                margin:0;
+            }
+            .nav{
+                display: flex;
+                background-color: black;
+            }
+            .nav > a{
+                display: block;
+                flex: 1 1 auto;
+                font-size: 20px;
+                padding: 30px;
+                color:white;
+                text-decoration: none;
+                text-align: center;
+                transition: background-color 1s, color 1s;
+            }
+            .nav a:hover{
+                background-color: white;
+                color:black;
+            }
+            .form-parent{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 80vh;
+            }
+            .form{
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                background-color: aqua;
+                border-radius: 10px;
+                margin: auto;
+                min-width: 50%;
+                align-items: center;
+                justify-content: center;
+            }
+            .form > div{
+                display: flex;
+                justify-content: space-between;
+                margin: 20px;
+                flex: 1;
+                width: 100%;
+                
+            }
+            label{
+                font-size: 30px;
+                flex:1;
+            }
+            input{
+                display: block;
+                font-size: 30px;
+                border-radius: 5px;
+                width: 20px;
+                flex:1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "nav">
+            <a href = "">hgfddfg</a>
+            <a href = "">hgfddfg</a>
+            <a href = "">hglkjhgfghjkfddfg</a>
+            <a href = "">hgfddfg</a>
+            <a href = "">hgfddfg</a>
+        </div>
+        <div class = "form-parent">
+            <form class = "form" method = "post" action = "/forms">
+                <div>
+                    <label>UserName</label>
+                    <input type = "text" name = "username" placeholder="Username">
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input type = "password" name = "password" placeholder="Password">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
