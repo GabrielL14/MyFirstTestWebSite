@@ -34,7 +34,7 @@ const server = http.createServer((req, res) => {
 
         const headers = req.rawHeaders;
         
-        
+        console.log(fileName);
         fs.stat(fileName, (err, stats) => {
             if(err == null){
                 if(stats.isFile()){
@@ -101,6 +101,12 @@ function GetFileNameByPath(pathStr){
     if(ext == ".svg"){
         contentType = "image/svg+xml";
     }
+    if(ext == ".png"){
+        contentType = "image/png";
+    }
+    if(ext == ".jpeg"){
+        contentType = "image/jpeg";
+    }
     if(ext == ".txt"){
         contentType = "text/plain";
     }
@@ -109,24 +115,11 @@ function GetFileNameByPath(pathStr){
     }
 
 
-    if(baseName == "" || baseName == "index.html"){
-        fileName = "index.html";
-    }
-    if(dirName == "/js"){
-        fileName = "js/" + baseName;
-    }
-    if(dirName == "/css"){
-        fileName = "css/" + baseName;
-    }
-    if(dirName == "/svg"){
-        fileName = "svg/" + baseName;
-    }
-    if(dirName == "/json"){
-        fileName = "json/" + baseName;
-    }
 
-    fileName = "resources/" + baseName;
-
+    fileName = "resources" + pathStr;
+    if(baseName == ""){
+        fileName = "resources/index.html";
+    }
     return {
         fileName: fileName,
         contentType: contentType
