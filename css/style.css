@@ -102,16 +102,15 @@ body{
 }
 
 
-@media screen and (min-width: 800px) and (max-width: 1200px){
+@media screen and (min-width: 600px) and (max-width: 1200px){
     .nav{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        display: flex;
     }
     .nav a {
         display: block;
     }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
     .nav{
         display: block;
     }
