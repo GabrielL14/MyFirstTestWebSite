@@ -125,6 +125,8 @@ function GetFileNameByPath(pathStr){
         fileName = "json/" + baseName;
     }
 
+    fileName = "resources/" + baseName;
+
     return {
         fileName: fileName,
         contentType: contentType
