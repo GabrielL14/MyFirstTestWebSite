@@ -81,7 +81,7 @@ body{
 .main{
     display: block;
     flex: 3;
-    height:80vh;
+    min-height:80vh;
     padding: 10px;
     margin: 10px;
 }
