@@ -33,12 +33,13 @@
             }
             .form{
                 display: flex;
+                flex:1;
                 flex-direction: column;
                 padding: 20px;
                 background-color: aqua;
                 border-radius: 10px;
-                margin: auto;
                 min-width: 50%;
+                margin: 100px;
                 align-items: center;
                 justify-content: center;
             }
@@ -57,9 +58,12 @@
             input{
                 display: block;
                 font-size: 30px;
-                border-radius: 5px;
-                width: 20px;
-                flex:1;
+                background-color: inherit;
+                min-width: 20px;
+                flex:2;
+                border:none;
+                border-bottom: 2px solid black;
+                user-select: none;
             }
         </style>
     </head>
