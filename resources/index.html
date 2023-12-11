@@ -70,15 +70,15 @@
             
         </div>
         <div class = "nav">
-            <a href = "">About</a>
+            <a href = "html-document-generator.html">HTML Document Generator</a>
+            <a href = "forms.html">Form</a>
+            <a href = "instagram-forms.html">Instagram Forms</a>
+            <a href = "google-forms.html">Google Forms</a>
+            <a href = "forms-generator.html">Forms Generator</a>
             <a href = "">Link</a>
             <a href = "">Edit</a>
             <a href = "">Windows</a>
             <a href = "">Papipapoin</a>
-            <a href = "">jhgfdsdfghjkjhgf</a>
-            <a href = "">jhghjhg</a>
-            <a href = "">ghjkjhgfghjk</a>
-            <a href = "">jhgfghgf</a>
             <a href = "">Link10</a>
             <a href = "">Link11</a>
             <a href = "">Link12</a>
@@ -143,12 +143,20 @@
             navigationBarButton.addEventListener('click', (e) => {
                 console.log('click on navigation bar button');
                 ShowNavigationBar(true);
-            })
-            navigationBarParent.addEventListener('click', (e) => {
-                if(e.target == navigationBarParent){
-                    ShowNavigationBar(false);
+            });
+            const mainBoxParent = document.querySelector('.main-box-parent');
+            document.onscroll = (e) => {
+                const clientHeight = document.scrollingElement.clientHeight;
+                const scrollHeight = document.documentElement.scrollHeight;
+                const bottomScrollPosition = scrollHeight - clientHeight - pageYOffset;
+                if(bottomScrollPosition <= 100){
+                    mainBoxParent.appendChild(document.createElement('div'));
+                    mainBoxParent.appendChild(document.createElement('div'));
                 }
-            })
+                
+                
+            }
+            
             
             
         </script>
