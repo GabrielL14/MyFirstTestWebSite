@@ -3,11 +3,21 @@
     <head>
         <title>DOCUMENT GENERATOR</title>
         <script src = "js/document-generator.js"></script>
-        <script src = "js/url-data-main.js"></script>
+        <style>
+            .para{
+                font-size: 30px;
+                color: aqua;
+                
+                word-wrap: break-word;
+            }
+        </style>
     </head>
     <body>
+        <p class = "para"></p>
         <script>
-            Main();
+            window.onload = () => {
+                document.querySelector('.para').innerHTML = DocumentToUrlDataBase64(GenerateDocument2());
+            }
         </script>
     </body>
 </html>
