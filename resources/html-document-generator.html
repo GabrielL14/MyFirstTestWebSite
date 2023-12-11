@@ -2,21 +2,24 @@
 <html>
     <head>
         <title>DOCUMENT GENERATOR</title>
+        <meta charset="UTF-8">
         <script src = "js/document-generator.js"></script>
         <style>
             .para{
                 font-size: 30px;
                 color: aqua;
-                
+                margin-bottom: 100px;
                 word-wrap: break-word;
             }
         </style>
     </head>
     <body>
-        <p class = "para"></p>
+        <p id = "para" class = "para"></p>
+        <p id = "para2" class = "para"></p>
         <script>
             window.onload = () => {
-                document.querySelector('.para').innerHTML = DocumentToUrlDataBase64(GenerateDocument2());
+                document.getElementById('para').innerText = DocumentToUrlData(GenerateDocument2(), false);
+                document.getElementById('para2').innerText = DocumentToUrlData(GenerateDocument2(), true);
             }
         </script>
     </body>
