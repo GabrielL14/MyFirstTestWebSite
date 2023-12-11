@@ -8,7 +8,7 @@ function GeneratePortableDocument(title, originId, styleCode = "", scriptsLinks 
 
         const jsonInfoScript = document.createElement('script');
         jsonInfoScript.id = "json-info";
-        jsonInfoScript.innerHTML = JSON.stringify({timestamp: Date.now(), originId: originId});
+        jsonInfoScript.innerHTML = JSON.stringify({timestamp: Date.now(), originId: originId, infos: infos});
         jsonInfoScript.type = "application/json";
 
         dom.head.appendChild(jsonInfoScript);
@@ -29,7 +29,7 @@ function GeneratePortableDocument(title, originId, styleCode = "", scriptsLinks 
         for(let i = 0; i < scriptsCodesCount; i += 1){
             const script = document.createElement("script");
             const scriptCode = scriptsCodes[i];
-            if(typeof scriptCode == "script"){
+            if(typeof scriptCode == "string"){
                 script.innerHTML = scriptCode;
                 dom.body.appendChild(script);
 
@@ -40,12 +40,6 @@ function GeneratePortableDocument(title, originId, styleCode = "", scriptsLinks 
             
 
         }
-
-        const h1 = document.createElement('h1');
-        h1.innerHTML = "Hello World. I am a document";
-        h1.style = "color: aqua; font-size: 100px;";
-
-        dom.body.appendChild(h1);
 
 
         return dom;
@@ -96,8 +90,14 @@ function DownloadText(fileName, text){
 }
 
 function GenerateDocument1(){
-    return GeneratePortableDocument("HTML Document", "doc-1", '', ["http://192.168.0.160:8080/js/document-generator.js", "http://192.168.0.160:8080/js/inject.js"], [], {prop1:"str1", prop2: "str2"});
+    return GeneratePortableDocument("HTML Document", "doc-1", '', ["http://" + location.host + "/js/document-generator.js", "http://" + location.host + "/js/inject.js"], [], {prop1:"str1", prop2: "str2"});
 }
-
+function GenerateDocument2(){
+    const dataMainScriptSrc = "http://" + location.host + "/js/url-data-main.js";
+    const rulesUrl = "http://" + location.host + "/rules";
+    const result = GeneratePortableDocument("HTML Document", "doc-2", '', [dataMainScriptSrc], ['Main();'], {rulesUrl});
+    
+    return result;
+}
 
 
