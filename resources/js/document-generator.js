@@ -48,10 +48,14 @@ function GeneratePortableDocument(title, originId, styleCode = "", scriptsLinks 
         throw "error arguments type";
     }
 }
-function DocumentToUrlDataBase64(dom){
-    if(dom instanceof Document){
+function DocumentToUrlData(dom, toBase64){
+    if(dom instanceof Document && typeof toBase64 == "boolean"){
         const domStr = "<!DOCTYPE html>" + dom.documentElement.outerHTML;
-        return "data:text/html;base64," + btoa(domStr);
+        let result = "data:text/html," + domStr;
+        if(toBase64){
+            result = "data:text/html;base64," + btoa(domStr);
+        }
+        return result;
     }
     else{
         throw "error arguments type";
