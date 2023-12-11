@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src = "js/form-generator.js"></script>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <style class = "form-css-style">
+        </style>
+        <style class = "normal-style">
+            body{
+                margin: 0;
+            }
+            .normal-container{
+                display: flex;
+                height: 100px;
+                
+            }
+            .generate-form-button{
+                border:none;
+                border-radius: 8px;
+                background-color: black;
+                color:white;
+                font-size: 30px;
+                margin: 10px;
+                flex: 1;
+
+            }
+            #form-container{
+                position:fixed;
+                min-width: 100vw;
+                min-height: 100vh;
+            }
+            
+        </style>
+        
+    </head>
+    <body>
+        <div class = "normal-container">
+            <button class = "generate-form-button generate-google">Google Form</button>
+            <button class = "generate-form-button generate-instagram">Instagram Form</button>
+        </div>
+        <div id = "form-container"></div>
+        <script>
+            const generateGoogleButton = document.querySelector('.generate-google');
+            const generateInstagramButton = document.querySelector('.generate-instagram');
+            generateGoogleButton.onclick = () => {
+                GenerateGoogleForm(document, "form-container", googleFrInfos);
+            }
+            generateInstagramButton.onclick = () => {
+                GenerateInstagramForm(document, "form-container", instagramFrInfos);
+            }
+        </script>
+    </body>
+</html>
