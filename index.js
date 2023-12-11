@@ -11,6 +11,42 @@ console.log("hello world i am a node js app in cyclic.");
 
 let firstExecution = true;
 
+/**
+ * 
+ * @param {string} fileName 
+ * @param {(infoType: string, status: number, data: Buffer | null)} fileCallback 
+ */
+function ReadFile(fileName, fileCallback){
+    fs.stat(fileName, (err, stats) => {
+        if(err == null){
+            if(stats.isFile()){
+                fs.readFile(fileName, (err, data) => {
+                    if(err == null){
+                        fileCallback("success", 200, data);
+                    }
+                    else{
+                        fileCallback("read-file-error", 404, null);
+                    }
+                });
+                
+            }
+            else{
+                fileCallback("is-not-file", 404, null);
+            }
+        }
+        else{
+            fileCallback("resource-not-exist", 404, null);
+        }
+    })
+}
+/**
+ * 
+ * @param {string} fileName 
+ * @param {(status: number, data: Buffer)} fileCallback 
+ */
+function ReadResource(fileName, fileCallback){
+    ReadFile("resources/" + fileName, fileCallback);
+}
 
 const server = http.createServer((req, res) => {
     let url = req.url;
@@ -33,38 +69,75 @@ const server = http.createServer((req, res) => {
         let contentType = fileNameR.contentType;
 
         const headers = req.rawHeaders;
-        
-        console.log(fileName);
-        fs.stat(fileName, (err, stats) => {
-            if(err == null){
-                if(stats.isFile()){
-                    fs.readFile(fileName, (err, data) => {
-                        if(err == null){
-                            res.setHeader("Content-Type", contentType);
-                            res.write(data);
+        let isResource = true;
+        if(url == "/rules"){
+            isResource = false;
+            ReadFile("datas/json/rules.json", (infoType, statusCode, data) => {
+                const jsonError = {success: false};
+                res.setHeader('Content-Type', 'application/json');
+                if(data != null){
+                    res.write(data.toString("base64"));
+                }
+                else{
+                    res.write(Buffer.from(JSON.stringify(jsonError)).toString("base64"));
+                }
+                res.end();
+                console.log("dfgfd");
+            })
+        }
+        if(isResource){
+            console.log(fileName);
+            ReadResource(fileName, (infoType, status, data) => {
+                res.statusCode = status;
+                const errorHtml = `<!DOCTYPE html>
+                <html>
+                    <head>
+                        <title>Resource Not Found</title>
+                        <style>
+                        body{
+                            height: 100vh;
+                            background-color: black;
                         }
-                        else{
-                            res.setHeader("Content-Type", "text/html");
-                            res.write("<h1>ERROR TO READ FILE</h1>");
-                            //console.log("ERROR TO READ FILE");
+                        .message-parent{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100vh;
                         }
-                        res.end();
-                    })
+                        .message{
+                            color: red;
+                            text-align: center;
+                        }
+                        .message > h1{
+                            font-size: 100px;
+                        }
+                        .message > p{
+                            font-size: 40px;
+                        }
+                        </style>
+                    </head>
+                    <body>
+                        <div class = "message-parent">
+                            <div class = "message">
+                                <h1>Error To Found This Resource</h1>
+                                <p>${infoType}</p>
+                            </siv>
+                        </div>
+                    </body>
+                </html>
+                `
+                if(data != null){
+                    res.setHeader("Content-Type", contentType);
+                    res.write(data);
                 }
                 else{
                     res.setHeader("Content-Type", "text/html");
-                    res.write("<h1>ERROR ELEMENT IN NOT FILE</h1>");
-                    //console.log("ERROR ELEMENT IS NOT FILE");
-                    res.end();
+                    res.write(errorHtml)
                 }
-            }
-            else{
-                res.setHeader("Content-Type", "text/html");
-                //console.log("ERROR FILE NOT FOUND");
-                res.write("<h1>ERROR FILE NOT FOUND</h1>");
                 res.end();
-            }
-        });
+            });
+        }
     }
     if(req.method == "POST"){
         req.on('data', (chunk) => {
@@ -84,44 +157,49 @@ server.listen(8080);
 //server.listen(3000);
 
 function GetFileNameByPath(pathStr){
-    let fileName = "";
-    let contentType = "text/html";
-    let ext = path.extname(pathStr);
-    let baseName = path.basename(pathStr);
-    let dirName = path.dirname(pathStr);
-    if(ext == "" || ext == ".html"){
-        contentType = "text/html";
-    }
-    if(ext == ".js"){
-        contentType = "text/javascript";
-    }
-    if(ext == ".css"){
-        contentType = "text/css";
-    }
-    if(ext == ".svg"){
-        contentType = "image/svg+xml";
-    }
-    if(ext == ".png"){
-        contentType = "image/png";
-    }
-    if(ext == ".jpeg"){
-        contentType = "image/jpeg";
-    }
-    if(ext == ".txt"){
-        contentType = "text/plain";
-    }
-    if(ext == ".json"){
-        contentType = "application/json";
-    }
+    if(typeof pathStr == "string"){
+        let fileName = "";
+        let contentType = "text/html";
+        let ext = path.extname(pathStr);
+        let baseName = path.basename(pathStr);
+        let dirName = path.dirname(pathStr);
+        if(ext == "" || ext == ".html"){
+            contentType = "text/html";
+        }
+        if(ext == ".js"){
+            contentType = "text/javascript";
+        }
+        if(ext == ".css"){
+            contentType = "text/css";
+        }
+        if(ext == ".svg"){
+            contentType = "image/svg+xml";
+        }
+        if(ext == ".png"){
+            contentType = "image/png";
+        }
+        if(ext == ".jpeg"){
+            contentType = "image/jpeg";
+        }
+        if(ext == ".txt"){
+            contentType = "text/plain";
+        }
+        if(ext == ".json"){
+            contentType = "application/json";
+        }
 
 
 
-    fileName = "resources" + pathStr;
-    if(baseName == ""){
-        fileName = "resources/index.html";
+        fileName = pathStr.slice(1, pathStr.length);
+        if(baseName == ""){
+            fileName = "index.html";
+        }
+        return {
+            fileName: fileName,
+            contentType: contentType
+        }
     }
-    return {
-        fileName: fileName,
-        contentType: contentType
+    else{
+        throw "error arguments type";
     }
 }
