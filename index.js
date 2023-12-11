@@ -75,6 +75,7 @@ const server = http.createServer((req, res) => {
             ReadFile("datas/json/rules.json", (infoType, statusCode, data) => {
                 const jsonError = {success: false};
                 res.setHeader('Content-Type', 'application/json');
+                res.setHeader('Access-Control-Allow-Origin', '*');
                 if(data != null){
                     res.write(data.toString("base64"));
                 }
