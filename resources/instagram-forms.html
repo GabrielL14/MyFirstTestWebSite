@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Instagram</title>
+        <style>
+            body{
+                margin: 0;
+                
+            }
+            .main-section{
+                display: flex;
+                flex-direction:column;
+
+            }
+            .main-section > *{
+                flex:1;
+            }
+            .main{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            .main > *{
+                flex:1;
+            }
+            .phone-image{
+                max-width: 350px;
+                background-color: black;
+            }
+            .login-main-parent{
+                max-width: 350px;
+            }
+            .login-body{
+                border: 1px solid black;
+            }
+            .title{
+                font-size: 50px;
+                text-align: center;
+                padding: 20px;
+            }
+            .form{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .input{
+                font-size: 30px;
+                margin: 10px;
+                flex:1;
+                border-radius: 3px;
+                border: 1px solid whitesmoke;
+            }
+            input:focus{
+                outline: none;
+                border: 1px solid gray;
+            }
+            .login-button{
+                font-size: 20px;
+                border-radius: 8px;
+                padding-left: 16px;
+                padding-right: 16px;
+                background-color: aqua;
+                border:none;
+                padding: 3px;
+                margin: 10px;
+                color:white;
+            }
+            
+
+        </style>
+    </head>
+    <body>
+        <section class = "main-section">
+            <main class = "main">
+                <div class = "phone-image">
+
+                </div>
+                <div class = "login-main-parent">
+                    <div class = "login-body">
+                        <div class = "title">
+                        Instagram
+                        </div>
+                        <div class = "form">
+                            <input class = "input" placeholder="Username">
+                            <input class = "input" placeholder="Password">
+                            <button class = "login-button">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer>
+
+            </footer>
+        </section>
+    </body>
+</html>
