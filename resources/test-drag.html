@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test Drag</title>
+        <style>
+            body{
+                margin: 0;
+            }
+            .drag-and-drop-parent{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100vh;
+            }
+            .drag-and-drop{
+                padding: 50px;
+                font-size: 40px;
+                background-color: black;
+                color: white;
+                text-align: center;
+                user-select: none;
+                margin: 40px;
+            }
+            .nav{
+                display: flex;
+                background-color: gray;
+                overflow: hidden;
+                flex-wrap: wrap;
+            }
+            .nav > div{
+                box-sizing: border-box;
+                flex: 1 200px;
+                display: block;
+                background-color: black;
+                padding: 20px;
+                font-size: 30px;
+                color: white;
+                user-select: none;
+                cursor: pointer;
+                margin: 0;
+            }
+            .nav > div:hover{
+                background-color: white;
+                color: black;
+            }
+            .nav > div:active{
+                background-color: aqua;
+                color: greenyellow;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class = "nav">
+            <div>File</div>
+            <div>Edit</div>
+            <div>Windows</div>
+            <div>Tools</div>
+            <div>Help</div>
+            <div>About</div>
+        </div>
+        <div class = "drag-and-drop-parent">
+            <div id = "drag-element" class = "drag-element drag-and-drop">Draggable Element</div>
+            <div id = "drop-element" class = "drop-element drag-and-drop">Drop Element In This</div>
+        </div>
+        <script>
+            const dragElement = document.getElementById("drag-element");
+            const dropElement = document.getElementById("drop-element");
+            dragElement.draggable = true;
+            dragElement.addEventListener('dragstart', (ev) => {
+                ev.dataTransfer.setData("text/plain", "hello world");
+                ev.dataTransfer.dropEffect = "copy";
+                console.log("on start drag");
+            })
+
+            dropElement.addEventListener("drop", (ev) => {
+                ev.preventDefault();
+                console.log("on drop. data: ", ev.dataTransfer.getData("text/plain"));
+            });
+            dropElement.addEventListener("dragover", (ev) => {
+                ev.preventDefault();
+                ev.dataTransfer.dropEffect = "move";
+                console.log("on drag over");
+            });
+            
+        </script>
+    </body>
+</html>
